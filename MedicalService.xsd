@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). 
+	RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. -->
+<xs:schema xmlns:tns="http://medical.vendor.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.0" targetNamespace="http://medical.vendor.com/">
+
+	<xs:element name="checkRequestStatus" type="tns:checkRequestStatus"></xs:element>
+
+	<xs:element name="checkRequestStatusResponse" type="tns:checkRequestStatusResponse"></xs:element>
+
+	<xs:element name="requestMedicalRecords" type="tns:requestMedicalRecords"></xs:element>
+
+	<xs:element name="requestMedicalRecordsResponse" type="tns:requestMedicalRecordsResponse"></xs:element>
+
+	<xs:complexType name="requestMedicalRecords">
+		<xs:sequence>
+			<xs:element name="request" type="tns:medicalRequest"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="medicalRequest">
+		<xs:sequence>
+			<xs:element name="addressLine1" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="clientId" type="xs:string"></xs:element>
+			<xs:element name="firstName" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="governmentId" type="xs:string"></xs:element>
+			<xs:element name="lastName" type="xs:string"></xs:element>
+			<xs:element name="postalCode" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="requestMedicalRecordsResponse">
+		<xs:sequence>
+			<xs:element name="response" type="tns:medicalResponse"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="medicalResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="transactionSucessful" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="checkRequestStatus">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="checkRequestStatusResponse">
+		<xs:sequence>
+			<xs:element name="response" type="tns:medicalStatusResponse"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="medicalStatusResponse">
+		<xs:sequence>
+			<xs:element name="requestStatus" type="tns:requestStatus"
+				minOccurs="0"></xs:element>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="requestStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RECEIVED"></xs:enumeration>
+			<xs:enumeration value="INPROGRESS"></xs:enumeration>
+			<xs:enumeration value="COMPLETE"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

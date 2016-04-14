@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). 
+	RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. -->
+<xs:schema xmlns:tns="http://rx.vendor.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.0" targetNamespace="http://rx.vendor.com/">
+
+	<xs:element name="checkRequestStatus" type="tns:checkRequestStatus"></xs:element>
+
+	<xs:element name="checkRequestStatusResponse" type="tns:checkRequestStatusResponse"></xs:element>
+
+	<xs:element name="requestRxDataRecords" type="tns:requestRxDataRecords"></xs:element>
+
+	<xs:element name="requestRxDataRecordsResponse" type="tns:requestRxDataRecordsResponse"></xs:element>
+
+	<xs:complexType name="requestRxDataRecords">
+		<xs:sequence>
+			<xs:element name="request" type="tns:rxDataRequest"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="rxDataRequest">
+		<xs:sequence>
+			<xs:element name="addressLine1" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="clientId" type="xs:string"></xs:element>
+			<xs:element name="firstName" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="governmentId" type="xs:string"></xs:element>
+			<xs:element name="lastName" type="xs:string"></xs:element>
+			<xs:element name="postalCode" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="requestRxDataRecordsResponse">
+		<xs:sequence>
+			<xs:element name="response" type="tns:rxDataResponse"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="rxDataResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+			<xs:element name="transactionSuccessful" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="checkRequestStatus">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="checkRequestStatusResponse">
+		<xs:sequence>
+			<xs:element name="response" type="tns:rxDataStatusResponse"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="rxDataStatusResponse">
+		<xs:sequence>
+			<xs:element name="requestStatus" type="tns:requestStatus"
+				minOccurs="0"></xs:element>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="requestStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RECEIVED"></xs:enumeration>
+			<xs:enumeration value="INPROGRESS"></xs:enumeration>
+			<xs:enumeration value="COMPLETE"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
