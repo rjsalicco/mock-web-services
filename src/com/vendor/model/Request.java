@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author T61JH19
+ * @author rj
  *
  */
 public interface Request extends Serializable {

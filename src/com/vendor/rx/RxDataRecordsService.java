@@ -11,7 +11,7 @@ import com.vendor.rx.model.RxDataStatusResponse;
 
 /**
  * 
- * @author t61jh19
+ * @author rj
  *
  */
 @WebService

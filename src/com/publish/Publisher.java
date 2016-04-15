@@ -1,25 +1,48 @@
-package com.vendor.publish;
+package com.publish;
+
+import java.util.logging.Logger;
 
 import javax.xml.ws.Endpoint;
 
+import com.company.DocumentHandlerServiceImpl;
 import com.vendor.medical.MedicalRecordsServiceImpl;
 import com.vendor.rx.RxDataRecordsServiceImpl;
 
 /**
  * 
- * @author T61JH19
+ * @author rj
  *
  */
 public class Publisher {
 
 	/**
 	 * 
+	 */
+	private Logger logger = Logger.getLogger("com.vendor.publish.Publisher");
+	
+	private String portNumber = "8080";
+	
+	/**
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		Endpoint.publish("http://localhost:8080/ws/medical", new MedicalRecordsServiceImpl());
-		
-		Endpoint.publish("http://localhost:8080/ws/rx", new RxDataRecordsServiceImpl());
+		Publisher publisher = new Publisher();
+		publisher.startService(new MedicalRecordsServiceImpl(), "medical");
+		publisher.startService(new RxDataRecordsServiceImpl(), "rx");
+		publisher.startService(new DocumentHandlerServiceImpl(), "document");
+	}
+	
+	/**
+	 * 
+	 * @param webServiceImpl
+	 * @param context
+	 */
+	public void startService(Object webServiceImpl, String context) {
+
+		logger.info("Starting " + webServiceImpl + " on port: " + portNumber);
+		Endpoint.publish("http://localhost:"+ portNumber + "/ws/" + context, webServiceImpl);
+		logger.info("Web service started and the wsdl is here: http://localhost:"+ portNumber + "/ws/" + context + "?wsdl");
 	}
 }

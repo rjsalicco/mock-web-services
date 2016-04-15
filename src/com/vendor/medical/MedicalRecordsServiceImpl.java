@@ -12,7 +12,7 @@ import com.vendor.model.RequestStatus;
 
 /**
  * 
- * @author t61jh19
+ * @author rj
  *
  */
 @WebService(endpointInterface = "com.vendor.medical.MedicalRecordsService")

@@ -6,6 +6,11 @@ import javax.xml.bind.annotation.XmlType;
 import com.vendor.model.Response;
 import com.vendor.model.RequestStatus;
 
+/**
+ * 
+ * @author rj
+ *
+ */
 @XmlType(name = "medicalStatusResponse")
 public class MedicalStatusResponse implements Response {
 

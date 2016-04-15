@@ -5,6 +5,11 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.vendor.model.Response;
 
+/**
+ * 
+ * @author rj
+ *
+ */
 @XmlType(name = "rxDataResponse")
 public class RxDataResponse implements Response {
 

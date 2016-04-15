@@ -5,6 +5,11 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.vendor.model.Request;
 
+/**
+ * 
+ * @author rj
+ *
+ */
 @XmlType(name = "medicalRequest")
 public class MedicalRequest implements Request {
 
@@ -24,42 +29,42 @@ public class MedicalRequest implements Request {
 	public String getClientId() {
 		return clientId;
 	}
-	@XmlElement(name= "clientId", required=true)
+	@XmlElement(name="clientId", required=true)
 	public void setClientId(String clientId) {
 		this.clientId = clientId;
 	}
 	public String getFirstName() {
 		return firstName;
 	}
-	@XmlElement(name = "firstName")
+	@XmlElement(name="firstName")
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
 	}
-	@XmlElement(name = "lastName", required=true)
+	@XmlElement(name="lastName", required=true)
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	public String getGovernmentId() {
 		return governmentId;
 	}
-	@XmlElement(name = "governmentId", required=true)
+	@XmlElement(name="governmentId", required=true)
 	public void setGovernmentId(String governmentId) {
 		this.governmentId = governmentId;
 	}
 	public String getAddressLine1() {
 		return addressLine1;
 	}
-	@XmlElement(name = "addressLine1")
+	@XmlElement(name="addressLine1")
 	public void setAddressLine1(String addressLine1) {
 		this.addressLine1 = addressLine1;
 	}
 	public String getPostalCode() {
 		return postalCode;
 	}
-	@XmlElement(name = "postalCode")
+	@XmlElement(name="postalCode")
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}

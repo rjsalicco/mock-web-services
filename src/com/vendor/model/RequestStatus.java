@@ -1,5 +1,10 @@
 package com.vendor.model;
 
+/**
+ * 
+ * @author rj
+ *
+ */
 public enum RequestStatus {
 	RECEIVED ("Request received."),
 	INPROGRESS ("Request in progress."),

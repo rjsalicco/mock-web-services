@@ -5,6 +5,11 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.vendor.model.Request;
 
+/**
+ * 
+ * @author rj
+ *
+ */
 @XmlType(name = "rxDataRequest")
 public class RxDataRequest implements Request {
 

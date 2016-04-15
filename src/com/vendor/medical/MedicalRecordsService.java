@@ -11,7 +11,7 @@ import com.vendor.medical.model.MedicalStatusResponse;
 
 /**
  * 
- * @author t61jh19
+ * @author rj
  *
  */
 @WebService
