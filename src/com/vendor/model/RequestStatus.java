@@ -23,5 +23,4 @@ public enum RequestStatus {
 	public String toString() {
 		return this.name;
 	}
-	
 }

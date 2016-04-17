@@ -1,6 +1,5 @@
 package com.company.handler.model;
 
-import java.awt.Image;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -20,16 +19,16 @@ public class HandlerRequest implements Request {
 	 * 
 	 */
 	private static final long serialVersionUID = -9194266317685870747L;
-	private Image file;
+	private String transactionId;
 	private List<byte[]> files;
 	
 	
-	public Image getFile() {
-		return file;
+	public String getTransactionId() {
+		return transactionId;
 	}
-	@XmlElement(name="file", required=true)
-	public void setFile(Image file) {
-		this.file = file;
+	@XmlElement(name="transactionId", required=true)
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 	public List<byte[]> getFiles() {
 		return files;

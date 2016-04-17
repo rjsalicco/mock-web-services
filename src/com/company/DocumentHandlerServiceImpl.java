@@ -6,6 +6,7 @@ import javax.jws.WebService;
 
 import com.company.handler.model.HandlerRequest;
 import com.company.handler.model.HandlerResponse;
+import com.company.model.ProcessStatus;
 
 /**
  * 
@@ -23,6 +24,10 @@ public class DocumentHandlerServiceImpl implements DocumentHandlerService {
 	@Override
 	public HandlerResponse handleRecords(HandlerRequest request) {
 		logger.info("Received...");
-		return null;
+		
+		HandlerResponse handlerResponse = new HandlerResponse();
+		handlerResponse.setProcessStatus(ProcessStatus.SUCCESSFUL);
+		
+		return handlerResponse;
 	}
 }
