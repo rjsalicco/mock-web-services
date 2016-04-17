@@ -19,6 +19,7 @@ public class HandlerRequest implements Request {
 	 * 
 	 */
 	private static final long serialVersionUID = -9194266317685870747L;
+	
 	private String transactionId;
 	private List<byte[]> files;
 	

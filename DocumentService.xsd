@@ -31,6 +31,7 @@
 	<xs:complexType name="handlerResponse">
 		<xs:sequence>
 			<xs:element name="processStatus" type="tns:processStatus"></xs:element>
+			<xs:element name="transactionId" type="xs:string"></xs:element>
 		</xs:sequence>
 	</xs:complexType>
 
